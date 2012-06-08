@@ -5,7 +5,7 @@ public class mod_SimpleNotice extends BaseMod {
 
     @Override
     public String getVersion() {
-        return "SimpleNotice v1.2.5-1.0";
+        return "v1.2.5-1.1";
     }
 
     @Override
@@ -19,19 +19,18 @@ public class mod_SimpleNotice extends BaseMod {
     @Override
     public boolean onTickInGame(float tick, Minecraft game) {
         // !!! This value needs to be updated every update
-        //NoticeGui.getInstance(game).tick(!game.x);
-        NoticeGui.getInstance(game).tick(true);
+        NoticeGui.getInstance(game).tick();
         return true;
     }
 
     @Override
     public void receiveCustomPacket(ee packet) {
-        NoticeGui.getInstance().addNotice(new String(packet.c));
+        NoticeGui.get().addNotice(new String(packet.c));
     }
 
     @Override
     public void serverDisconnect() {
-        NoticeGui.getInstance().close();
+        NoticeGui.get().close();
     }
 
 
