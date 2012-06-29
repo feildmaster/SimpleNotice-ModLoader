@@ -27,6 +27,6 @@ public class mod_SimpleNotice extends BaseMod {
 
     @Override
     public String getVersion() {
-        return "1.2 (core: 1.1)";
+        return "1.3 (core: 1.1)";
     }
 }
